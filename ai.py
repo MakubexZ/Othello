@@ -5,7 +5,8 @@ import MCTS_selection
 class AI(object):
 
     def __init__(self, level_ix=0):
-        self.level = ['random', 'minimax', 'minimax_alphabeta', 'MCTS3s', 'MCTS?s'][level_ix]
+        self.level = ['random', 'minmax', 'minimax_alphabeta', 'MCTS3s', 'MCTS?s'][level_ix]
+        # print('level is :', self.level)
         # 棋盘位置权重，参考：https://github.com/k-time/ai-minimax-agent/blob/master/ksx2101.py
         self.board_weights = [
             [120, -20,  20,   5,   5,  20, -20, 120],
@@ -31,15 +32,20 @@ class AI(object):
 
     def brain(self, board, opponent):
         if self.level == 'random':
+            # print('000000000')
             _, action = self.randomchoice(board)
         elif self.level == 'minmax':
+            # print('1111111')
             _, action = self.minimax(board, opponent)
         elif self.level == 'minimax_alphabeta':
+            # print('22222222')
             _, action = self.minimax_alpha_beta(board, opponent)
         elif self.level == 'MCTS3s':
+            # print('3333333333333')
             ai = MCTS.MCTS(board, opponent)
             _, action = ai.get_action()
         else:
+            # print('444444444444444444')
             ai = MCTS_selection.MCTS(board, opponent)
             _, action = ai.get_action()
         # print(action)

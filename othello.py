@@ -22,11 +22,11 @@ class Game(object):
                 break
         while True:
             if p1 == 1 and p2 == 1:
-                level_ix1 = int(input("Please select the level of AI player1.\n\t0: random\n\t1: minimax\n\t2: minimax_alphabeta\n\t3: MCTS3s\n\t4: MCTS?s\n:"))
+                level_ix1 = int(input("Please select the level of AI player1.\n\t0: random\n\t1: minmax\n\t2: minimax_alphabeta\n\t3: MCTS3s\n\t4: MCTS?s\n:"))
                 if level_ix1 > 4:
                     print('\nWrong choice, please enter numbers as behind')
                     continue
-                level_ix2 = int(input("Please select the level of AI player2.\n\t0: random\n\t1: minimax\n\t2: minimax_alphabeta\n\t3: MCTS3s\n\t4: MCTS?s\n:"))
+                level_ix2 = int(input("Please select the level of AI player2.\n\t0: random\n\t1: minmax\n\t2: minimax_alphabeta\n\t3: MCTS3s\n\t4: MCTS?s\n:"))
                 if level_ix2 > 4:
                     print('\nWrong choice, please enter numbers as behind')
                     continue
@@ -34,7 +34,7 @@ class Game(object):
                 player2 = AIPlayer('O', level_ix2)
                 break
             elif p1 == 1 or p2 == 1:
-                level_ix = int(input("Please select the level of AI player.\n\t0: random\n\t1: minimax\n\t2: minimax_alphabeta\n\t3: MCTS3s\n\t4: MCTS?s\n:"))
+                level_ix = int(input("Please select the level of AI player.\n\t0: random\n\t1: minmax\n\t2: minimax_alphabeta\n\t3: MCTS3s\n\t4: MCTS?s\n:"))
                 if level_ix > 4:
                     print('\nWrong choice, please enter numbers as behind')
                     continue
